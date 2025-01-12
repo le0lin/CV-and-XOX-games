@@ -1,0 +1,97 @@
+/* XOX Oyunu İçin Genel Stil */
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Tahtanın düzeni */
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);  
+    grid-template-rows: repeat(3, 120px);
+    gap: 10px;
+    margin-bottom: 20px; 
+    justify-content: center;
+  }
+  
+  .square {
+    width: 120px;
+    height: 120px;
+    font-size: 3em;  
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+  
+  /* Hover efekti */
+  .square:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.1);  
+  }
+  
+  /* Kazanan veya durumu gösteren mesaj */
+  .status {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Oyun durumu (kazanan veya sıra) mesajı */
+  .status span {
+    font-size: 1.8em;
+    color: #2a9d8f;
+  }
+  
+  /* XOX Oyunu sağda ve tam ortada konumlandırma */
+  .game-section {
+    flex: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #210934;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    height: 100%;
+    position: absolute;
+    right: 0;  
+    top: 50%;
+    transform: translateY(-50%); 
+    margin-right: 20px;  
+  }
+  
+  /* Responsive Tasarım (Mobil uyumlu) */
+  @media (max-width: 768px) {
+    .board {
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px);
+    }
+  
+    .square {
+      width: 100px;
+      height: 100px;
+      font-size: 2.5em;
+    }
+  
+    .status {
+      font-size: 1.2em;
+    }
+  
+    .game-section {
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  
